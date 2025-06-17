@@ -1,0 +1,127 @@
+.partner-subtitle {
+  color: #f39c6b;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.partner-title {
+  font-size: 32px;
+  margin-bottom: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.logo-container {
+  overflow: hidden;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 70px;
+}
+
+.logo-strip {
+  display: flex;
+  width: calc(200%);  /* double the width to fit duplicates */
+  animation: scroll-left 15s linear infinite;
+}
+
+.logo-strip.reverse {
+  animation: scroll-right 15s linear infinite;
+}
+
+.partner-logo {
+  flex: 0 0 auto;
+  margin: 0 40px;
+  width: 120px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: opacity(0.5);
+}
+
+.logo-strip:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.partner-button {
+   background: linear-gradient(to bottom, #f8713e, #fbb147);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+   transition: background-position 0.5s, color 0.5s;
+}
+
+.partner-button:hover i::before,
+.partner-button:hover i::before {
+  content: "\F144";
+  font-family: 'bootstrap-icons';
+}
+
+.partner-button:hover {
+  background-position: 0 0;
+  background: linear-gradient(to bottom,#fbb147 , #f8713e);
+}
+
+@media (max-width: 768px) {
+  .partner-title {
+    font-size: 26px;
+  }
+
+  .partner-logo {
+    width: 90px;
+    margin: 0 25px;
+  }
+
+  .partner-button {
+    display: block;
+    text-align: center;
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-title {
+    font-size: 22px;
+  }
+
+  .partner-logo {
+    width: 70px;
+    margin: 0 15px;
+  }
+
+  .partner-button {
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-bottom: 50px;
+
+  }
+}

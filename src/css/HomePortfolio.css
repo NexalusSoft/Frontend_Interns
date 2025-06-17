@@ -1,0 +1,123 @@
+.portfolio {
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 3.1rem 1.3px;
+}
+
+.portfolio h3 {
+  color: #ffaa4a;
+  font-weight: lighter;
+  letter-spacing: 4px;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+}
+
+.portfolio h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 10px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+  /* Optional spacing between cards */
+}
+
+.cards {
+  flex: 0 0 calc(100% / 3);
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: .3rem;
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
+}
+
+.cards img {
+  border-radius: 0;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  padding: 10px 20px;
+}
+
+#carousel2 .cards {
+  flex: 0 0 calc(90% / 3);
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.cards {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards .port_overlays {
+  position: absolute;
+  bottom: 63px;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cards:hover .port_overlays {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+
+.cards p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+.cards img {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cards .port_overlays {
+  transition: all 0.4s ease-in-out;
+}
+
+
+@media (max-width: 900px) {
+  .cards {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    flex: 0 0 100%;
+  }
+
+  .cards img {
+    height: 200px;
+  }
+}

@@ -1,0 +1,239 @@
+/* Main Container */
+.map-container-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Left Navigation Styles */
+.location-nav {
+  width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header h1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #080808;
+}
+
+.country-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.country-list li {
+  position: relative;
+  font-size: 20px;
+  margin: 15px 0;
+  padding-left: 40px;
+  cursor: pointer;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.country-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #ffaa4a;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.country-list li:hover::before {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  border-radius: 0;
+}
+
+.country-list li:hover {
+  transform: translateX(15px);
+  color:#ffaa4a;
+}
+
+.country-list li:hover::after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color :#ffaa4a;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+}
+
+/* Chat Button */
+.chat-btn {
+  background:linear-gradient(135deg, #f8713e, #fbb147);
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 125px;
+  align-self: flex-start;
+  transition: background 0.3s;
+}
+
+.chat-btn:hover {
+  background: (135deg, #f8713e, #fbb147);;
+}
+.chat-btn.desktop-visible {
+  display: block;
+}
+
+.chat-btn.mobile-visible {
+  display: none;
+}
+
+/* Right Side Styles */
+.map-address-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.map-wrapper {
+    position: relative;
+  width: 100%;
+  max-width: 800px; /* or whatever fixed max size you prefer */
+  margin: auto;
+  aspect-ratio: 16 / 9; /* preserves shape on resize */
+}
+
+.world-map {
+ width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.address-box {
+  margin-top: 2px;
+  padding: 15px;
+  /* margin-left: 30px; */
+}
+
+.address-box h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.address-box p {
+  color: #111111;
+  font-size: 15px;
+}
+.address-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.address-line i {
+  font-size: 1.1rem;
+  width: 20px;
+  margin-left: 18px;
+  color:#ffaa4a;;
+  
+}
+
+.address-line span {
+  color: #666;
+  margin-right: 18px;
+}
+
+/* Marker Styles */
+.marker {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #ffaa4a;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .map-container-wrapper {
+    flex-direction: column;
+  }
+
+  .location-nav {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .map-address-container {
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  
+  .map-container-wrapper {
+    flex-direction: column; /* This makes the nav go on top */
+  }
+   .chat-btn.desktop-visible {
+    display: none;
+  }
+
+  .chat-btn.mobile-visible {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+   .country-list li {
+    font-size: 15px;
+    padding: 0 15px 0 35px;
+  }
+  .map-container-wrapper {
+    flex-direction: column;
+  }
+   .address-box {
+    padding: 15px;
+  }
+
+  .address-box h2 {
+    font-size: 18px;
+  }
+
+  .address-box p {
+    font-size: 14px;
+  }
+  }

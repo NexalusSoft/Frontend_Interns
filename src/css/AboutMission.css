@@ -1,0 +1,196 @@
+
+/*About Us section*/
+/*-----------------------About Mission, Vision, History------------------------*/
+.left-side {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.right-side {
+  width: 100%;
+  background: white;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(65, 61, 61, 0.92) 0%, rgba(107, 103, 103, 0.92) 100%);
+  width: 90%;
+}
+
+.nav-pills .nav-link {
+  color: #111;
+  font-weight: 530;
+  font-size: 1.2rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #ffaa4a;
+  color: white;
+}
+
+ul.list-unstyled li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#tabMenu .nav-link {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: black;
+  transition: color 0.8s ease;
+}
+
+#tabMenu .nav-link:hover, .nav-link.active {
+  color: #ffaa4a !important;
+  background: none !important;
+  border: none !important;
+}
+
+.custom-lists {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-lists li::before {
+  content: "*";
+  color: #ffaa4a;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 8px;
+ 
+}
+
+.hidden-slide {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gradient-explore-btn {
+  margin-top: 40px;
+  width: 200px;
+  background: linear-gradient(to bottom, #f8713e, #fbb147);
+  color: white;
+  border: none;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s, color 0.5s;
+  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  overflow: hidden;
+}
+
+.gradient-explore-btn i {
+  transition: all 0.3s ease;
+}
+
+.gradient-explore-btn:hover {
+  background-position: 0 0;
+  background: linear-gradient(to bottom, #fbb147, #f8713e);
+  color: white;
+}
+
+.gradient-explore-btn:hover i::before {
+  content: "\F144";
+  font-family: 'bootstrap-icons';
+}
+
+.tab-flex-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .tab-flex-wrapper {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tab-flex-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tab-flex-wrapper ul {
+    padding-top: 10px;
+  }
+
+  #tabMenu {
+    display: none !important; /* hide pills nav on mobile */
+  }
+
+  #tabSelect {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .left-side {
+    min-height: 60vh;
+  }
+
+  .card-overlay {
+    width: 85%;
+  }
+
+  .gradient-explore-btn {
+    margin-top: 50px;
+  }
+
+  #tabSelect {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .container {
+    display: flex;
+  }
+
+  .left-side {
+    width: 50%;
+    min-height: 80vh;
+  }
+
+  .right-side {
+    width: 50%;
+  }
+
+  .card-overlay {
+    width: 80%;
+  }
+
+  .gradient-explore-btn {
+    margin-top: 70px;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .card-overlay {
+    width: 70%;
+  }
+}
