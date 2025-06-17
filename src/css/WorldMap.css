@@ -1,11 +1,9 @@
-/* Main Container */
 .map-container-wrapper {
   display: flex;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
 }
 
-/* Left Navigation Styles */
 .location-nav {
   width: 300px;
   padding: 30px;
@@ -30,7 +28,7 @@
   position: relative;
   font-size: 20px;
   margin: 15px 0;
-  padding-left: 40px;
+  padding-left: 50px; 
   cursor: pointer;
   color: #000;
   transition: transform 0.3s ease;
@@ -39,7 +37,7 @@
 .country-list li::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 10px; 
   top: 50%;
   transform: translateY(-50%);
   width: 10px;
@@ -58,25 +56,24 @@
 
 .country-list li:hover {
   transform: translateX(15px);
-  color:#ffaa4a;
+  color: #ffaa4a;
 }
 
 .country-list li:hover::after {
   content: "";
   position: absolute;
-  left: 30px;
+  left: 40px;
   top: 50%;
   transform: translateY(-50%);
   width: 10px;
   height: 10px;
-  background-color :#ffaa4a;
+  background-color: #ffaa4a;
   border-radius: 50%;
   transition: opacity 0.3s ease;
 }
 
-/* Chat Button */
 .chat-btn {
-  background:linear-gradient(135deg, #f8713e, #fbb147);
+  background: linear-gradient(135deg, #f8713e, #fbb147);
   color: white;
   border: none;
   padding: 10px 28px;
@@ -89,8 +86,9 @@
 }
 
 .chat-btn:hover {
-  background: (135deg, #f8713e, #fbb147);;
+  background: linear-gradient(135deg, #f8713e, #fbb147);
 }
+
 .chat-btn.desktop-visible {
   display: block;
 }
@@ -99,7 +97,6 @@
   display: none;
 }
 
-/* Right Side Styles */
 .map-address-container {
   flex: 1;
   display: flex;
@@ -108,15 +105,15 @@
 }
 
 .map-wrapper {
-    position: relative;
+  position: relative;
   width: 100%;
-  max-width: 800px; /* or whatever fixed max size you prefer */
+  max-width: 800px;
   margin: auto;
-  aspect-ratio: 16 / 9; /* preserves shape on resize */
+  aspect-ratio: 16 / 9;
 }
 
 .world-map {
- width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: contain;
 }
@@ -124,7 +121,6 @@
 .address-box {
   margin-top: 2px;
   padding: 15px;
-  /* margin-left: 30px; */
 }
 
 .address-box h2 {
@@ -138,6 +134,7 @@
   color: #111111;
   font-size: 15px;
 }
+
 .address-line {
   display: flex;
   align-items: center;
@@ -148,8 +145,7 @@
   font-size: 1.1rem;
   width: 20px;
   margin-left: 18px;
-  color:#ffaa4a;;
-  
+  color: #ffaa4a;
 }
 
 .address-line span {
@@ -157,7 +153,6 @@
   margin-right: 18px;
 }
 
-/* Marker Styles */
 .marker {
   position: absolute;
   width: 16px;
@@ -174,18 +169,15 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
-
   70% {
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0.7;
   }
-
   100% {
     transform: translate(-50%, -50%) scale(1.8);
     opacity: 0;
   }
 }
-
 
 /* Responsive Styles */
 @media (max-width: 992px) {
@@ -202,12 +194,13 @@
     padding: 20px;
   }
 }
+
 @media (max-width: 768px) {
-  
   .map-container-wrapper {
-    flex-direction: column; /* This makes the nav go on top */
+    flex-direction: column;
   }
-   .chat-btn.desktop-visible {
+
+  .chat-btn.desktop-visible {
     display: none;
   }
 
@@ -218,14 +211,24 @@
 }
 
 @media (max-width: 576px) {
-   .country-list li {
+  .country-list li {
     font-size: 15px;
-    padding: 0 15px 0 35px;
+    padding-left: 50px; 
   }
+
+  .country-list li::before {
+    left: 10px; 
+  }
+
+  .country-list li:hover::after {
+    left: 40px;
+  }
+
   .map-container-wrapper {
     flex-direction: column;
   }
-   .address-box {
+
+  .address-box {
     padding: 15px;
   }
 
@@ -236,4 +239,4 @@
   .address-box p {
     font-size: 14px;
   }
-  }
+}

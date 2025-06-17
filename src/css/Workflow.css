@@ -3,6 +3,7 @@
   color: #fff;
   padding: 4rem 2rem;
   margin-top: 70px;
+  overflow-x: hidden;
 }
 
 .workflow-headers {
@@ -15,24 +16,24 @@
   font-size: 18px;
   letter-spacing: 4px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
   font-weight: 300;
 }
 
 .workflow-titles {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   margin-bottom: 10px;
 }
 
 .workflow-headers hr {
-  width: 100%;
+  width: 100px;
   margin: 20px auto;
   border: 1px solid #FFAA4A;
 }
 
-/* Grid layout */
+/* Grid layout for desktop */
 .workflow-grids {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -49,19 +50,16 @@
   transition: all 0.3s ease;
 }
 
-/* Alternate row layout */
+/* Alternate layout for top row */
 .top-row .workflow-items:nth-child(odd) .workflow-texts {
   order: 2;
 }
-
 .top-row .workflow-items:nth-child(odd) .workflow-icons {
   order: 1;
 }
-
 .top-row .workflow-items:nth-child(even) .workflow-texts {
   order: 1;
 }
-
 .top-row .workflow-items:nth-child(even) .workflow-icons {
   order: 2;
 }
@@ -97,6 +95,7 @@
 .workflow-texts {
   padding: 0;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .workflow-numbers {
@@ -124,10 +123,10 @@
   font-size: 14px;
   text-align: left;
   color: #ccc;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
-/* Responsive */
+/* Responsive Layout Adjustments */
 @media (max-width: 1200px) {
   .workflow-grids {
     grid-template-columns: repeat(3, 1fr);
@@ -138,18 +137,51 @@
   .workflow-grids {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .workflow-icons {
+    height: 160px;
+  }
+
+  .workflow-numbers {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 576px) {
   .workflow-grids {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .workflow-items {
+    min-width: 90vw;           /* Use viewport width */
+    max-width: 90vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .workflow-icons {
+    width: 100%;
     height: 120px;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #ffaa4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .workflow-numbers {
-    font-size: 30px;
+  .workflow-icons img {
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+    height: auto;
   }
 }

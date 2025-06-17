@@ -1,4 +1,3 @@
-
 .text-section {
   padding: 2.3rem;
   background-image: url('../image/home/textareabg.jpg');
@@ -37,26 +36,28 @@
 
 .know-more-btn {
   background-color: #f96800;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  padding: 0.5rem 2rem;
   font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
 .know-more-btn:hover {
   background-color: #f96800;
 }
 
-.know-more-btn,
+.know-more-btn:hover .more-arrow-icon {
+  transform: rotate(-30deg);
+}
+
 .more-arrow-icon {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.know-more-btn:hover .more-arrow-icon {
-  transform: rotate(-30deg);
-}
- .img-container {
+.img-container {
   position: relative;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .slider-img {
@@ -64,8 +65,8 @@
   display: block;
 }
 
-/* video section */
-/* Play Button  */
+/* Video Section */
+/* Play Button */
 .video-play-button {
   position: absolute;
   top: 50%;
@@ -88,14 +89,16 @@
   font-size: 1.8rem;
 }
 
+/* Video Modal */
 .video-modal {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+
 }
 
 .video-modal.d-none {
@@ -104,30 +107,40 @@
 
 .video-frame-container {
   position: relative;
-  width: 80vw;
-  height: 45vw;
+  width: 90vw;
+  height: 50vw;
   max-width: 960px;
   max-height: 540px;
   background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 100;
+
 }
 
 .video-frame-container iframe {
   width: 100%;
   height: 100%;
+  border: none;
+  z-index: 1;
+  position: relative;
+
 }
 
+/* Close Button */
 .video-close {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   font-size: 2rem;
   background: transparent;
   border: none;
-  color: #fff;
-  z-index: 10000;
+  color: white;
   cursor: pointer;
+  z-index: 200;
 }
 
+/* Tabs */
 .tab-buttons {
   margin: 0;
   padding: 0;
@@ -141,7 +154,7 @@
 }
 
 .tab-button {
-  padding: .8rem;
+  padding: 0.8rem;
   text-align: center;
   border-top: 1px solid white;
 }
@@ -150,14 +163,44 @@
   background: linear-gradient(to left, #fba341, #eb5f41);
 }
 
+/* Responsive Adjustments */
 @media (max-width: 991.98px) {
-
   .img-container,
   .text-section {
     height: auto;
   }
 }
 
+@media (max-width: 768px) {
+  .video-frame-container {
+    width: 90vw;
+    height: 50vw;
+    max-height: 60vh;
+  }
+
+  .video-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .video-play-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .video-play-button i {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .video-frame-container {
+    height: 60vw;
+  }
+}
+
+/* Fade Effect */
 .fade {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;

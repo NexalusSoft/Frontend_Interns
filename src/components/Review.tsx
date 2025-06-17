@@ -50,7 +50,6 @@ function Review() {
           {/* Left */}
           <div className="col-lg-6 mb-4">
             <div className="review-icon">
-              {/* Inline SVG kept as-is */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 132.3 106"
