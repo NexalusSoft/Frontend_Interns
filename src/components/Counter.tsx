@@ -39,7 +39,7 @@ const Counter = () => {
           <button className="play-button" onClick={handlePlay}>
             <i className="bi bi-play-fill" />
           </button>
-          <p className="video-text">Play Video</p>
+          <p className="video-text"> Play Video </p>
         </div>
 
         <div className="stats-grid">
