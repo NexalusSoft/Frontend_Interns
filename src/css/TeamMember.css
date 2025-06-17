@@ -1,0 +1,58 @@
+.img-wrapper {
+  margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(135deg, rgba(219, 52, 22, 0.85), rgba(207, 113, 45, 0.7));
+  padding: 10px 40px;
+  display: flex;
+  gap: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Show box when hovering image or name */
+.team-member:hover .social-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-box a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-box a:hover {
+  color: #080808;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.member-name:hover {
+  color: #CF712D;
+}
+
+.member-name2 {
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  text-align: left;
+  letter-spacing: 3px;
+  margin-bottom: 100px;
+}

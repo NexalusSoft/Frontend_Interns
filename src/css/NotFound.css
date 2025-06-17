@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error-page {
+  background: url('../image/notfound/404-bg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.error-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim effect */
+  z-index: 0;
+}
+
+.background-404 {
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(219, 121, 9, 0.4);
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.content {
+  margin-top: 1rem;
+  z-index: 2;
+  max-width: 650px;
+  padding: 1rem;
+}
+
+.error-heading {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.home-btn {
+  height: 60px;
+  width: 200px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #ff8000, #ff5500);
+  color: white;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.home-btn:hover i::before {
+  content: "\F144";
+  font-family: 'bootstrap-icons';
+   background: linear-gradient(to right,#ff5500 , #ff8000);
+}
+
+@media (max-width: 768px) {
+  .background-404 {
+    font-size: 35vw;
+  }
+
+  .error-heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-heading {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .home-btn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}

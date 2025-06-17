@@ -1,0 +1,100 @@
+.service {
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service-header p{
+    color: #ffaa4a;
+    font-size: 1.2rem;
+    letter-spacing: .4rem;
+    font-weight: 350;
+
+}
+.service-header h1{
+    font-size: 3rem;
+
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 0;
+}
+
+.portfolio-card {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.portfolio-info {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  padding: 15px;
+  color: #fff;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+
+.portfolio-info small,
+.portfolio-info h5 {
+  transition: transform 0.4s ease;
+  font-size: 1.5rem;
+}
+
+.portfolio-info small {
+  font-size: 0.85rem;
+}
+
+.portfolio-info h5 {
+  margin: 0;
+  font-weight: bold;
+}
+.portfolio-info h5:hover{
+  color:#ffaa4a;
+}
+
+.portfolio-info button {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding: 2px 1.5rem;
+  background: #ffaa4a;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 2.64px;
+  border: none;
+  white-space: nowrap;
+  min-width: fit-content;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-info small {
+  transform: translateY(-50px);
+  transition-delay: 0s;
+}
+
+.portfolio-card:hover .portfolio-info h5 {
+  transform: translateY(-50px);
+  transition-delay: 0.2s;
+}
+
+.portfolio-card:hover .portfolio-info button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}

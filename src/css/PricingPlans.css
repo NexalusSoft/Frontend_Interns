@@ -1,0 +1,98 @@
+.pricing-card {
+  background-image: url('../image/PricingPlans/textareabg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  height: 100%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.pricing-content {
+  height: 100%;
+}
+
+.price-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+
+.feature-section {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+.pricing-card:hover .feature-section {
+  background: linear-gradient(to bottom, rgba(251, 163, 65, 0.8), rgba(235, 95, 65, 0.8));
+  color: white;
+}
+
+.pricing-card:hover .feature-section li span i {
+  color: white !important;
+}
+
+.feature-section ul span i {
+  font-size: 5px;
+  padding: 0.3rem;
+  color: #ffaa4a;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature-section li {
+  line-height: 2.5rem;
+}
+
+.budget-btn {
+  background: #fa6746;
+  background: linear-gradient(1deg, rgba(250, 103, 70, 1) 53%, rgba(255, 187, 110, 1) 100%);
+  border: none;
+  border-radius: 0;
+  width: 170px;
+  height: 50px;
+  color: white;
+}
+
+.budget-btn:hover i::before {
+  content: "\F144"; /* arrow-up-right */
+  font-family: 'bootstrap-icons';
+}
+
+.feature-section-staic-color {
+  background: linear-gradient(to bottom, rgba(251, 163, 65, 0.8), rgba(235, 95, 65, 0.8));
+  color: white;
+}
+
+.feature-section-staic-color .fa-solid {
+  border-color: white;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .pricing-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 766px) {
+  .pricing-content {
+    flex-direction: column-reverse;
+  }
+
+  .price-section {
+    background-color: rgba(black, black, black, 0.9);
+  }
+
+  .feature-section {
+    background: rgba(255, 255, 255, 0.95);
+  }
+}

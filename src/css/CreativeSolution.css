@@ -1,0 +1,198 @@
+.service-text {
+  font-size: 1.3rem;
+  font-weight: 100;
+  margin-left: 3.3rem;
+}
+
+.service-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#info-text #info-title {
+  font-size: 3rem;
+}
+
+/* Image & Text container transitions */
+#info-img,
+#info-text {
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  flex: 1;
+  width: 100%;
+}
+
+/* Default animation offsets */
+#info-img {
+  transform: translateX(-30px);
+}
+
+#info-text {
+  transform: translateX(30px);
+}
+
+/* Animation toggle classes */
+#info-img.hide,
+#info-text.hide {
+  opacity: 0;
+}
+
+#info-img.show,
+#info-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Make sure image scales well */
+#info-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Buttons */
+.overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: 1;
+}
+.service-btn button {
+  font-size: 1.3rem;
+  position: relative;
+  color: #e5e5e5 !important;
+  background-image: url(../image/services/Home-3-btn-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.service-btn button .overlays {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.service-btn button.active .overlays {
+  background: linear-gradient(135deg, rgba(219, 52, 22, 0.6), rgba(231, 123, 46, 0.6));
+}
+
+.service-btn button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive styles */
+@media (min-width: 992px) {
+  /* Force image and text side-by-side on large screens */
+  #info-img,
+  #info-text {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .service-heading {
+    font-size: 2.2rem;
+  }
+
+  #info-text #info-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .service-text {
+    font-size: 1.1rem;
+    margin-left: 2.5rem;
+  }
+
+  .service-heading {
+    font-size: 2rem;
+  }
+
+  #info-text #info-title {
+    font-size: 2.2rem;
+  }
+
+  .service-btn button {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-text {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+  }
+
+  .service-heading {
+    font-size: 1.8rem;
+  }
+
+  #info-text #info-title {
+    font-size: 2rem;
+  }
+
+  #info-img {
+    transform: translateX(-20px);
+  }
+
+  #info-text {
+    transform: translateX(20px);
+  }
+
+  .service-btn button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-text {
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+  }
+
+  .service-heading {
+    font-size: 1.5rem;
+  }
+
+  #info-text #info-title {
+    font-size: 1.6rem;
+  }
+
+  #info-img {
+    transform: translateX(-10px);
+  }
+
+  #info-text {
+    transform: translateX(10px);
+  }
+
+  .service-btn button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-text {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+  }
+
+  .service-heading {
+    font-size: 1.3rem;
+  }
+
+  #info-text #info-title {
+    font-size: 1.4rem;
+  }
+}
