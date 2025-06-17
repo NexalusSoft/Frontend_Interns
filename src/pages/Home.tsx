@@ -218,13 +218,13 @@ function Home() {
       <HomePortfolio />
       <TopBrands />
       <Counter />
-      <PFaq/>
+      <PFaq/>  
       <Workflow />
       <PricingPlans />
-      <Review />
+      <Review /> 
       <HomeAnimation/>
       <NewsLetter/>
-      <HomeFooter/>
+      <HomeFooter/>  
     </div>
   
   );

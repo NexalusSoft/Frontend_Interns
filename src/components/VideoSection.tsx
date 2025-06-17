@@ -4,7 +4,6 @@ import powerstation from '../image/home/Home-3-Slider-1.jpg';
 import oilrecovery from '../image/home/Home-3-Slider-2-1.jpg';
 import lasterImg from '../image/home/Home-3-Slider-3.jpg';
 import factoryImg from '../image/home/Home-3-Slider-4.jpg';
-import { GeneratedIdentifierFlags } from 'typescript';
 
 const tabs = [
   {
@@ -30,7 +29,7 @@ const tabs = [
     image: factoryImg,
     title: 'Factory Installation',
     desc: 'Aliquam erat volutpat. Sed ac pulvinar apien. Sed volutpat nisl nunc, eu efficitur ipsum vulputate. Curabitur et finibus nunc.'
-  },  
+  }
 ];
 
 function VideoSection() {
@@ -43,11 +42,17 @@ function VideoSection() {
     setActiveIndex(index);
   };
 
+  const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Prevent closing when clicking inside iframe container
+    if ((e.target as HTMLElement).classList.contains('video-backdrop')) {
+      setShowModal(false);
+    }
+  };
+
   return (
     <section className="slider">
       <div className="container-fluid px-0">
         <div className="row g-0 flex-wrap-reverse flex-lg-nowrap">
-
           {/* Text Section */}
           <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-start text-section">
             <span className="text-uppercase text-warning fw-semibold">High Quality</span>
@@ -66,7 +71,7 @@ function VideoSection() {
               alt="Slider"
             />
             <div
-              className="video-play-button mx-auto position-absolute"
+              className="video-play-button position-absolute"
               onClick={() => setShowModal(true)}
               role="button"
             >
@@ -92,22 +97,26 @@ function VideoSection() {
 
       {/* Video Modal */}
       {showModal && (
-        <div className="video-modal d-flex justify-content-center align-items-center video-backdrop" onClick={() => setShowModal(false)}>
-          <div className="video-container position-relative">
+        <div className="video-modal video-backdrop" onClick={handleModalClick}>
+          <div className="video-frame-container">
             <iframe
-              id="youtubeFrame"
-              width="800"
-              height="450"
-              src="https://www.youtube.com/embed/DV9-pYAUJYY?autoplay=1" 
-              title="YouTube video"
+              src="https://www.youtube.com/embed/DV9-pYAUJYY?autoplay=1"
+              title="YouTube Video"
+              allow="autoplay; encrypted-media"
               allowFullScreen
             ></iframe>
-            <button className="video-close btn btn-danger position-absolute" style={{ top: '10px', right: '10px' }} onClick={() => setShowModal(false)}>×</button>
-          </div>    
+            <button
+              className="video-close"
+              onClick={() => setShowModal(false)}
+              aria-label="Close Video"
+            >
+              &times;
+            </button>
+          </div>
         </div>
       )}
     </section>
   );
-};
+}
 
 export default VideoSection;

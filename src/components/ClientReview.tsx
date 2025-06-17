@@ -55,7 +55,7 @@ function ClientReview(){
   <div className="client-review-testimonial-wrapper">
     <div className="client-review-image-box">
       <img src={current.image} alt="Client Photo" />
-      <span className="quote">“</span>
+      {/* <span className="quote">“</span> */}
       <div className="client-review-author-info">
         <h3>{current.name}</h3>
         <p>{current.role}</p>

@@ -10,7 +10,7 @@
   color: #ffaa4a;
   font-weight: lighter;
   letter-spacing: 4px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
@@ -24,46 +24,44 @@
   position: relative;
   background: transparent;
   padding: 10px 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.carousel.active {
+  cursor: grabbing;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
   gap: 20px;
-  /* Optional spacing between cards */
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .cards {
   flex: 0 0 calc(100% / 3);
+  position: relative;
   background: transparent;
-  padding: 0;
-  margin: 0;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   overflow: hidden;
   transition: transform 0.4s ease-in-out;
+  margin: 0;
+  padding: 0;
 }
 
 .cards img {
-  border-radius: 0;
   width: 100%;
   height: 300px;
   object-fit: cover;
   display: block;
   background: transparent;
   padding: 10px 20px;
+  border-radius: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-#carousel2 .cards {
-  flex: 0 0 calc(90% / 3);
-  box-sizing: border-box;
-  background: transparent;
-}
-
-.cards {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Overlay animation */
 .cards .port_overlays {
   position: absolute;
   bottom: 63px;
@@ -88,7 +86,6 @@
   transform: translateY(0%);
 }
 
-
 .cards p {
   margin-top: 1rem;
   font-size: 1.3rem;
@@ -96,15 +93,6 @@
   color: white;
   text-align: center;
 }
-
-.cards img {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.cards .port_overlays {
-  transition: all 0.4s ease-in-out;
-}
-
 
 @media (max-width: 900px) {
   .cards {
@@ -119,5 +107,6 @@
 
   .cards img {
     height: 200px;
+    padding: 5px 10px;
   }
 }

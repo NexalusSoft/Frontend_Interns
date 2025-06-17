@@ -6,7 +6,7 @@ import projectImg3 from '../image/home/project-row-1-3.webp';
 import projectImg4 from '../image/home/project-row-1-4.webp';
 import projectImg5 from '../image/home/project-row-1-5.webp';
 import projectImg6 from '../image/home/project-row-1-6.webp';
-import projectImg7 from '../image/home/project-row-1-7.webp'
+import projectImg7 from '../image/home/project-row-1-7.webp';
 
 function HomePortfolio() {
   const track1Ref = useRef<HTMLDivElement>(null);
@@ -40,20 +40,13 @@ function HomePortfolio() {
     const cardWidth = (track.children[0] as HTMLElement).offsetWidth;
     carousel.scrollLeft = cardWidth * cards.length;
 
+    // Mouse Events
     const handleMouseDown = (e: MouseEvent) => {
       isDragging = true;
       startX = e.pageX;
       scrollLeft = carousel.scrollLeft;
       carousel.classList.add('active');
-      carousel.style.cursor = 'grabbing';
       e.preventDefault();
-    };
-
-    const handleMouseUp = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      carousel.style.cursor = 'grab';
-      snapToNearestSet(carousel, track);
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -64,10 +57,44 @@ function HomePortfolio() {
       handleLoop(carousel, track, cards.length, cardWidth);
     };
 
+    const handleMouseUp = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.classList.remove('active');
+      snapToNearestSet(carousel, track);
+    };
+
+    // Touch Events
+    const handleTouchStart = (e: TouchEvent) => {
+      isDragging = true;
+      startX = e.touches[0].pageX;
+      scrollLeft = carousel.scrollLeft;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX;
+      const walk = x - startX;
+      carousel.scrollLeft = scrollLeft - walk;
+      handleLoop(carousel, track, cards.length, cardWidth);
+    };
+
+    const handleTouchEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      snapToNearestSet(carousel, track);
+    };
+
+    // Attach mouse events
     carousel.addEventListener('mousedown', handleMouseDown);
+    carousel.addEventListener('mousemove', handleMouseMove);
     carousel.addEventListener('mouseup', handleMouseUp);
     carousel.addEventListener('mouseleave', handleMouseUp);
-    carousel.addEventListener('mousemove', handleMouseMove);
+
+    // Attach touch events
+    carousel.addEventListener('touchstart', handleTouchStart);
+    carousel.addEventListener('touchmove', handleTouchMove);
+    carousel.addEventListener('touchend', handleTouchEnd);
   };
 
   const handleLoop = (
@@ -120,7 +147,7 @@ function HomePortfolio() {
             [projectImg4, 'Engineering'],
             [projectImg5, 'Architecture'],
             [projectImg6, 'Electrical'],
-            [projectImg7, 'Construction']
+            [projectImg7, 'Construction'],
           ].map(([img, label], idx) => (
             <div className="cards" key={idx}>
               <img src={img as string} alt={label} />
@@ -141,7 +168,7 @@ function HomePortfolio() {
             [projectImg4, 'Packaging'],
             [projectImg3, 'Transportation'],
             [projectImg2, 'HVAC'],
-            [projectImg1, 'Recycling']
+            [projectImg1, 'Recycling'],
           ].map(([img, label], idx) => (
             <div className="cards" key={idx}>
               <img src={img as string} alt={label} />
@@ -153,6 +180,6 @@ function HomePortfolio() {
       </div>
     </section>
   );
-};
+}
 
 export default HomePortfolio;
